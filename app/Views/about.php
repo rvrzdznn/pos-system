@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POS System - About</title>
+
+    <title>POSLY | About</title>
+
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 
 <body>
 
     <nav>
-        <a href="<?= base_url('/') ?>">Home</a> |
-        <a href="<?= base_url('about') ?>">About</a> |
-        <a href="<?= base_url('customers') ?>">Customer Accounts</a> |
-        <a href="<?= base_url('users') ?>">User Accounts</a>
+        <div class="brand">RVRPOS</div>
+
+        <a href="<?= base_url('/') ?>">Home</a>
+        <a href="<?= base_url('customers') ?>">Customers</a>
+        <a href="<?= base_url('users') ?>">Users</a>
+        <a href="<?= base_url('about') ?>">About</a>
     </nav>
 
-    <hr>
+    <main class="container">
 
-    <h1>About</h1>
+        <div class="page-header">
+            <h1>About RVRPOS</h1>
+            <p>Simple PoS system + Try lang po yung UI.</p>
+        </div>
 
-    <p>
-        This is the first version of our Point-of-Sale system
-        built using CodeIgniter 4.
-    </p>
+        <div class="cards">
 
-    <p>
-        Customer and user information currently uses static PHP
-        arrays. A database can be added in a future version.
-    </p>
+            <div class="card">
+                <h3>Customer Accounts</h3>
+                <p>
+                    Customer records are retrieved from a MySQL database.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>User Accounts</h3>
+                <p>
+                    User account information is stored in MySQL.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        POSLY &copy; <?= date('Y') ?> · CodeIgniter 4
+    </footer>
 
 </body>
 </html>

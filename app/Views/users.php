@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Accounts</title>
+
+    <title>POSLY | Users</title>
+
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
 
 <body>
 
     <nav>
-        <a href="<?= base_url('/') ?>">Home</a> |
-        <a href="<?= base_url('about') ?>">About</a> |
-        <a href="<?= base_url('customers') ?>">Customer Accounts</a> |
-        <a href="<?= base_url('users') ?>">User Accounts</a>
+        <div class="brand">RVRPOS</div>
+
+        <a href="<?= base_url('/') ?>">Home</a>
+        <a href="<?= base_url('customers') ?>">Customers</a>
+        <a href="<?= base_url('users') ?>">Users</a>
+        <a href="<?= base_url('about') ?>">About</a>
     </nav>
 
-    <hr>
+    <main class="container">
 
-    <h1>User Accounts</h1>
+        <div class="page-header">
+            <h1>User Accounts</h1>
+            <p>Registered users and staff accounts in the POS system.</p>
+        </div>
 
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Full Name</th>
-                <th>Role</th>
-            </tr>
-        </thead>
+        <div class="table-card">
 
-        <tbody>
+            <table>
 
-            <?php foreach ($users as $user): ?>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Full Name</th>
+                        <th>Created At</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td><?= esc($user['username']) ?></td>
-                    <td><?= esc($user['full_name']) ?></td>
-                    <td><?= esc($user['role']) ?></td>
-                </tr>
+                <tbody>
 
-            <?php endforeach; ?>
+                    <?php foreach ($users as $user): ?>
 
-        </tbody>
-    </table>
+                        <tr>
+                            <td><?= esc($user['username']) ?></td>
+                            <td><?= esc($user['full_name']) ?></td>
+                            <td><?= esc($user['created_at']) ?></td>
+                        </tr>
+
+                    <?php endforeach; ?>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+    <footer>
+        POSLY &copy; <?= date('Y') ?> · CodeIgniter 4
+    </footer>
 
 </body>
 </html>
